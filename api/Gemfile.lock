@@ -75,6 +75,9 @@ GEM
     bootsnap (1.9.3)
       msgpack (~> 1.0)
     builder (3.2.4)
+    bullet (7.0.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     byebug (11.1.3)
     choice (0.2.0)
     concurrent-ruby (1.1.9)
@@ -104,7 +107,13 @@ GEM
       activerecord (>= 4.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    graphiql-rails (1.8.0)
+      railties
+      sprockets-rails
     graphql (1.13.0)
+    graphql-batch (0.5.0)
+      graphql (>= 1.10, < 2)
+      promise.rb (~> 0.7.2)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -135,7 +144,7 @@ GEM
     parallel (1.21.0)
     parser (3.0.3.1)
       ast (~> 2.4.1)
-    pg (1.2.3)
+    promise.rb (0.7.4)
     puma (5.5.2)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -247,11 +256,13 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.2)
     thor (1.1.0)
     tilt (2.0.10)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
+    uniform_notifier (1.14.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     webrick (1.7.0)
@@ -270,16 +281,18 @@ DEPENDENCIES
   action_policy-graphql
   active_record_doctor
   bootsnap
+  bullet
   byebug
   database_cleaner-active_record
   devise
   factory_bot_rails
   faker
   friendly_id
+  graphiql-rails
   graphql
+  graphql-batch
   jwt
   listen
-  pg
   puma
   rack-cors
   rails
@@ -290,6 +303,7 @@ DEPENDENCIES
   solargraph
   spring
   spring-watcher-listen
+  sqlite3
   tzinfo-data
 
 RUBY VERSION
