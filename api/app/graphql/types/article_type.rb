@@ -3,6 +3,10 @@
 module Types
   class ArticleType < Types::BaseObject
     field :author, UserType, null: false
+    def author
+      Loaders::AssociationLoader.for(Article, :author).load(object)
+    end
+
     field :body, String, null: false
     field :comments, [CommentType], null: false
 
@@ -15,6 +19,10 @@ module Types
     field :favorites_count, Int, null: false
     field :slug, ID, null: false
     field :tags, [TagType], null: false
+    def tags
+      Loaders::AssociationLoader.for(Article, :tags).load(object)
+    end
+
     field :title, String, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
 
